@@ -14,28 +14,28 @@ var port = process.env.PORT||3000;
 var app =express();
 app.use(bodyParser.json());
 
-// var newMember = new Member({
-//   name: ({
-//     title:'Mrs',
-//     firstName:'Payel',
-//     lastName:'Sheikh'
-//   }
-//   ),
-//   phoneNumber:'+1(585)-622-8907',
-//   emailAddress:'mehabub.sheikh@icloud.com',
-//   address:({ addressLine1:'6 Colonial Parkway',
-//   addressLine2:'Apartment #1',
-//   city:'Pittsford',
-//   state:'NY',
-//   zip:'14534'})}
-// );
-//
-// //Save the Member to database
-// newMember.save().then((mem) =>{
-//   console.log('Member Saved',mem);
-// }).catch((error) => {
-//   console.log('Unable to save the member to database',error);
-// });
+var newMember = new Member({
+  name: ({
+    title:'Mrs',
+    firstName:'Payel',
+    lastName:'Sheikh'
+  }
+  ),
+  phoneNumber:'+1(585)-622-8907',
+  emailAddress:'mehabub.sheikh@icloud.com',
+  address:({ addressLine1:'6 Colonial Parkway',
+  addressLine2:'Apartment #1',
+  city:'Pittsford',
+  state:'NY',
+  zip:'14534'})}
+);
+
+//Save the Member to database
+newMember.save().then((mem) =>{
+  console.log('Member Saved',mem);
+}).catch((error) => {
+  console.log('Unable to save the member to database',error);
+});
 
 //GET member API
 
@@ -49,21 +49,21 @@ app.get('/member',(req,res) =>{
 
 //Event Data Start Here
 
-// var newEvent = new OrgEvent({
-//   name:'Test Event1',
-//   organizer:'Mehabub',
-//   eventType:'Cultural',
-//   eventStartDate: new Date('11.30.2017'),
-//   eventEndDate: new Date('12.04.2017'),
-//   location:'ICC',
-//   rehearsalNeeded:'Yes'
-// });
+var newEvent = new OrgEvent({
+  name:'Test Event1',
+  organizer:'Mehabub',
+  eventType:'Cultural',
+  eventStartDate: new Date('11.30.2017'),
+  eventEndDate: new Date('12.04.2017'),
+  location:'ICC',
+  rehearsalNeeded:'Yes'
+});
 
-// newEvent.save().then((events) =>{
-//   console.log('Event Saved',events);
-// }).catch((error) =>{
-//   console.log('Unable to save the events to database',error);
-// });
+newEvent.save().then((events) =>{
+  console.log('Event Saved',events);
+}).catch((error) =>{
+  console.log('Unable to save the events to database',error);
+});
 
 //GET evets API
 app.get('/event',(req,res) =>{
